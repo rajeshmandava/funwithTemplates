@@ -5,8 +5,8 @@
 
 int main()
 {
-  int m = ::max(4,5);
-  std::cout<<"max(4,5) is "<<m<<std::endl;
+  int n = ::max(4,5);
+  std::cout<<"max(4,5) is "<<n<<std::endl;
 
   double f1 = 22.7;
   double f2 = 100.98;
@@ -47,4 +47,23 @@ int main()
   std::cout<<::max<double>(4,7.2)<<"\n"; 
 
   // 3. Specify that the parameters may have different types.
+  // TODO : To be discussed.
+
+  // Type Deduction for Default Arguments
+  ::f(1);
+  ::f();
+
+  auto m = ::max(66.66, 42);
+  std::cout<<"max(66.66,42) is "<<m<<std::endl;
+  m = ::max(42, 66.66);
+  std::cout<<"max(42, 66.66) is "<<m<<std::endl;
+  // In the second case the value 66.66 was type deduced to T1 i.e int so the returned value is int 66.
+  
+  // How to address return types in Multiple Template parameters
+  // 1. Introduce a third template paramter for the return type.
+  // 2. Let the Compiler find out the return type.
+  // 3. Declare the return type to be the "common type" of the two paramter types
+  // To be continued ...
+
+
 }

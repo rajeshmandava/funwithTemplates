@@ -1,4 +1,5 @@
 #include "Basics/max1.hpp"
+#include "Basics/foo.hpp"
 #include <string>
 #include <iostream>
 
@@ -15,4 +16,10 @@ int main()
   std::string s2 = "math";
 
   std::cout<<"max(s1,s2) is "<<::max(s1,s2)<<std::endl;
+
+  uint32_t i32;
+  std::cout<<sizeof(i32)<<std::endl;
+
+  uint64_t i64;
+  std::cout<<sizeof(i64)<<std::endl;
 }

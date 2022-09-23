@@ -22,4 +22,29 @@ int main()
 
   uint64_t i64;
   std::cout<<sizeof(i64)<<std::endl;
+
+  int i = 42;
+  const int c =42;
+  std::cout<<::max(i,c)<<"\n";
+  std::cout<<::max(c,c)<<"\n";
+
+  int& ir = i;
+  std::cout<<::max(i,ir)<<"\n";
+
+  int arr[4];
+  ::foo(&i, arr);
+
+  // Following are errors for wrong typename
+  // std::cout<<::max(4,7.2)<<"\n"; //Error: no matching function for call max(int, double) 
+  std::string s;
+  // ::foo("hello",s); //Error: No matching function for call to foo(const char [6], std::string&)
+
+  // Three ways to error handling 
+  // 1. Cast the arguments so that they both match.
+  std::cout<<::max(static_cast<double>(4),7.2)<<"\n";
+  
+  // 2. Specify explicitly the type of T to prevent the compiler from attempting type deduction:
+  std::cout<<::max<double>(4,7.2)<<"\n"; 
+
+  // 3. Specify that the parameters may have different types.
 }

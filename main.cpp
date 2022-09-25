@@ -1,5 +1,8 @@
-#include "Basics/max1.hpp"
+// #include "Basics/max1.hpp"
 #include "Basics/foo.hpp"
+// #include "Basics/maxauto.hpp"
+// #include "Basics/maxdecltype.hpp"
+#include "Basics/maxdecltypedecay.hpp"
 #include <string>
 #include <iostream>
 
@@ -63,7 +66,47 @@ int main()
   // 1. Introduce a third template paramter for the return type.
   // 2. Let the Compiler find out the return type.
   // 3. Declare the return type to be the "common type" of the two paramter types
-  // To be continued ...
+  
+  // Template Parameters for Return Types
+  /* 
+    1. Specify the template parameters explicitly
+
+    template<typename T>
+    T max(T a, T b);
+
+    ...
+
+    ::max<double>(4,7.2) //explicitly instantiate T as  double
+
+    2. Passing return type as argument
+
+    template<typename T1, typename T2, typename RT>
+    RT max (T1 a, T2 b);
+
+    However, template argument deduction does not take return types into account, and does not appear in the types of the function call parameters. Therefore RT cannot be deduced. As a consequence, i have to manually specify the template argument list explicitly.
+
+    Example:
+    template<typename T1, typename T2, typename RT>
+    RT max(T1 a, T2 b);
+
+    ::max<int, double, double>(4, 7.2); // This works, but tedious.
+
+    3. Explicitly specify return argument
+
+    template<typename RT, typename T1, typename T2>
+    RT max(T1 a, T2 b);
+
+    ::max<double>(4, 7.2) // return type is double, T1 and T2 are deduced.
+
+   */
+    // Deducing the Return type:
+
+std::cout<<::max(4,7.2)<<std::endl;
+
+std::cout<<"max from decltype "<<::max(4, 7.2)<<std::endl;
+
+
+
 
 
 }

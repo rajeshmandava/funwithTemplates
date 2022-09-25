@@ -2,7 +2,8 @@
 #include "Basics/foo.hpp"
 // #include "Basics/maxauto.hpp"
 // #include "Basics/maxdecltype.hpp"
-#include "Basics/maxdecltypedecay.hpp"
+// #include "Basics/maxdecltypedecay.hpp"
+#include "Basics/maxcommon.hpp"
 #include <string>
 #include <iostream>
 

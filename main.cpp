@@ -3,7 +3,9 @@
 // #include "Basics/maxauto.hpp"
 // #include "Basics/maxdecltype.hpp"
 // #include "Basics/maxdecltypedecay.hpp"
-#include "Basics/maxcommon.hpp"
+// #include "Basics/maxcommon.hpp"
+// #include "Basics/maxdefault1.hpp"
+#include "Basics/maxdefault3.hpp"
 #include <string>
 #include <iostream>
 
